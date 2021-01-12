@@ -1,0 +1,33 @@
+git 
+init git 初始化 
+
+Git 目錄簡單解析
+
+config 目錄    [ config 是倉庫的配置檔案 ]
+refs 目錄 都是引用檔案，如本地分支，遠端分支，標籤等 
+*a refs/heads/xxx 		   本地分支
+*b refs/remotes/origin/xxx 遠端分支
+*c refs/tags/xxx 		   本地tag
+
+
+trunk: Main line of development(主幹, 主要開發都由在 trunk)
+tags: Releases 
+(想要 Release 的時後, 就標個 Tag, 以後可以依 Tag 來找回之前版本的資料)
+branches: Preparation of release, bug fixing(分支, 可以將某些功能切出來, 或者 bug fix 等切成分支, 等做完後再用 Merge 合併回來)
+
+
+---------------
+
+pipeline {
+    agent any
+    
+    stages{
+        stage('Bulid'){
+            steps{
+                echo 'Hello world'
+            }
+        }
+    }
+}
+
+https://github.com/uopsdod/jenkins-demo.git
